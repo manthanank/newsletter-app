@@ -13,24 +13,16 @@ require("dotenv").config();
 // Connect to database
 connectDB();
 
-// Enable trust proxy to work with Vercel's proxy servers
-app.set('trust proxy', 1);
-
 app.use(
   cors({
     origin: "*",
   })
 );
 
-// Rate limiting - update configuration to handle proxied requests
+// Rate limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // limit each IP to 100 requests per windowMs
-  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
-  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
-  // Use the client's IP from X-Forwarded-For header when running behind a proxy
-  // This is needed for Vercel serverless functions
-  trustProxy: true
 });
 
 // Middleware
@@ -88,6 +80,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });
-
-// Export the Express API for Vercel serverless deployment
-module.exports = app;
