@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Subscription</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-paper-plane"></i>
+                <span>Newsletter</span>
+            </div>
+            
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch">
+                    <input type="checkbox" class="theme-switch-checkbox" id="theme-toggle">
+                    <div class="theme-switch-track">
+                        <div class="theme-switch-thumb">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="container">
+                <div class="subscription-card">
+                    <div class="card-image">
+                        <img src="images/newsletter-background.svg" alt="Newsletter image">
+                    </div>
+                    <div class="card-content">
+                        <h1>Stay In The Loop!</h1>
+                        <p class="subtitle">Subscribe to our newsletter for the latest updates, tips, and exclusive content.</p>
+                        
+                        <form id="subscribeForm" class="subscription-form">
+                            <div class="form-group">
+                                <label for="name">Name (optional)</label>
+                                <div class="input-icon-wrapper">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="name" name="name" placeholder="Enter your name">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <div class="input-icon-wrapper">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Interests (optional)</label>
+                                <div class="checkbox-group">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="tech" name="interests" value="tech">
+                                        <label for="tech">Technology</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="business" name="interests" value="business">
+                                        <label for="business">Business</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="design" name="interests" value="design">
+                                        <label for="design">Design</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="others" name="interests" value="others">
+                                        <label for="others">Others</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="subscribe-button">
+                                <span>Subscribe</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </form>
+                        
+                        <div id="message" class="message-container"></div>
+                        
+                        <p class="privacy-note">
+                            <i class="fas fa-lock"></i> We respect your privacy and will never share your information.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>&copy; 2025 Newsletter. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

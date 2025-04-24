@@ -1,0 +1,396 @@
+/* Modern Unsubscribe Page Styles */
+:root {
+    /* Light mode variables */
+    --primary-color: #5667FF;
+    --primary-hover: #4352db;
+    --secondary-color: #14c2a3;
+    --background-color: #f9fafc;
+    --card-color: #ffffff;
+    --text-color: #333;
+    --text-light: #666;
+    --border-color: #e5e8ef;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --box-shadow: 0 10px 30px rgba(86, 103, 255, 0.1);
+    --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+}
+
+/* Dark mode color scheme */
+[data-theme="dark"] {
+    --primary-color: #6778ff;
+    --primary-hover: #7889ff;
+    --secondary-color: #1ad8b7;
+    --background-color: #1a1e2b;
+    --card-color: #272b3a;
+    --text-color: #e8e8e8;
+    --text-light: #b0b0b0;
+    --border-color: #3a3f50;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Theme transition */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--card-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.logo i {
+    margin-right: 0.75rem;
+}
+
+/* Theme toggle switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.theme-switch-track {
+    display: inline-block;
+    background-color: var(--border-color);
+    width: 48px;
+    height: 24px;
+    position: relative;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+.theme-switch-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card-color);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    color: var(--text-light);
+    font-size: 10px;
+}
+
+input[type="checkbox"].theme-switch-checkbox {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+input[type="checkbox"]:checked + .theme-switch-track {
+    background-color: var(--primary-color);
+}
+
+input[type="checkbox"]:checked + .theme-switch-track .theme-switch-thumb {
+    left: 26px;
+}
+
+/* Main Content Styles */
+.main {
+    flex: 1;
+    padding: 3rem 1rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Unsubscribe Card Styles */
+.unsubscribe-card {
+    background-color: var(--card-color);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.card-header {
+    margin-bottom: 2rem;
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(86, 103, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.icon-circle i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.icon-circle.success {
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.icon-circle.success i {
+    color: var(--success-color);
+}
+
+.icon-circle.error {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.icon-circle.error i {
+    color: var(--error-color);
+}
+
+h1, h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+/* Card Body Styles */
+.card-body {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.email-display {
+    background-color: var(--background-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.email-value {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Feedback Section */
+.feedback-section {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.feedback-section p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.feedback-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.feedback-option {
+    display: flex;
+    align-items: center;
+}
+
+.feedback-option input[type="radio"] {
+    margin-right: 0.75rem;
+    accent-color: var(--primary-color);
+    width: 16px;
+    height: 16px;
+}
+
+/* Button Styles */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 576px) {
+    .action-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.primary-button, .secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.primary-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.primary-button:hover {
+    background-color: var(--primary-hover);
+}
+
+.secondary-button {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.secondary-button:hover {
+    background-color: var(--background-color);
+}
+
+/* Message Styles */
+.message-container {
+    margin-top: 1.5rem;
+}
+
+.message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    animation: fadeIn 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.message::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 0.75rem;
+    font-size: 1rem;
+}
+
+.message.success {
+    background-color: rgba(40, 167, 69, 0.1);
+    border: 1px solid rgba(40, 167, 69, 0.2);
+    color: var(--success-color);
+}
+
+.message.success::before {
+    content: "\f058"; /* check-circle */
+}
+
+.message.error {
+    background-color: rgba(220, 53, 69, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.2);
+    color: var(--error-color);
+}
+
+.message.error::before {
+    content: "\f057"; /* times-circle */
+}
+
+.message.info {
+    background-color: rgba(23, 162, 184, 0.1);
+    border: 1px solid rgba(23, 162, 184, 0.2);
+    color: var(--info-color);
+}
+
+.message.info::before {
+    content: "\f05a"; /* info-circle */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message.fade-out {
+    animation: fadeOut 0.5s;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Empty State Styles */
+.empty-state-content, 
+.success-state-content {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.empty-state-content p,
+.success-state-content p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.resubscribe-text {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 1.5rem;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--card-color);
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.05);
+}

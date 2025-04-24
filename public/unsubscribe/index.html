@@ -1,0 +1,114 @@
+<!-- unsubscribe page -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsubscribe from Newsletter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-paper-plane"></i>
+                <span>Newsletter</span>
+            </div>
+            
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch">
+                    <input type="checkbox" class="theme-switch-checkbox" id="theme-toggle">
+                    <div class="theme-switch-track">
+                        <div class="theme-switch-thumb">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="container">
+                <div class="unsubscribe-card">
+                    <div id="content">
+                        <div class="card-header">
+                            <div class="icon-circle">
+                                <i class="fas fa-envelope-open"></i>
+                            </div>
+                            <h1>Unsubscribe</h1>
+                            <p class="subtitle">We're sorry to see you go!</p>
+                        </div>
+                        
+                        <div class="card-body">
+                            <div class="email-display">
+                                <span>Email: </span>
+                                <span id="display-email" class="email-value"></span>
+                            </div>
+                            
+                            <div class="feedback-section">
+                                <p>Would you mind telling us why you're unsubscribing?</p>
+                                <div class="feedback-options">
+                                    <div class="feedback-option">
+                                        <input type="radio" id="too-many" name="reason" value="too-many">
+                                        <label for="too-many">Too many emails</label>
+                                    </div>
+                                    <div class="feedback-option">
+                                        <input type="radio" id="not-relevant" name="reason" value="not-relevant">
+                                        <label for="not-relevant">Content not relevant</label>
+                                    </div>
+                                    <div class="feedback-option">
+                                        <input type="radio" id="not-expected" name="reason" value="not-expected">
+                                        <label for="not-expected">Not what I expected</label>
+                                    </div>
+                                    <div class="feedback-option">
+                                        <input type="radio" id="other" name="reason" value="other">
+                                        <label for="other">Other reason</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="action-buttons">
+                                <button id="unsubscribe" class="primary-button">
+                                    <span>Unsubscribe</span>
+                                </button>
+                                <a href="/" class="secondary-button">
+                                    <span>Return to Subscription</span>
+                                </a>
+                            </div>
+                            
+                            <div id="message" class="message-container"></div>
+                        </div>
+                    </div>
+                    
+                    <div id="empty-state" class="empty-state-content" style="display: none;">
+                        <div class="icon-circle error">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h2>Invalid Unsubscribe Link</h2>
+                        <p>The unsubscribe link appears to be invalid or the email parameter is missing.</p>
+                        <a href="/" class="primary-button">Return to Subscription Page</a>
+                    </div>
+                    
+                    <div id="success-state" class="success-state-content" style="display: none;">
+                        <div class="icon-circle success">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h2>Successfully Unsubscribed</h2>
+                        <p>You have been successfully unsubscribed from our newsletter.</p>
+                        <p class="resubscribe-text">Changed your mind? You can always subscribe again.</p>
+                        <a href="/" class="secondary-button">Subscribe Again</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>&copy; 2025 Newsletter. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script defer src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+/* Modern Subscribe Page Styles */
+:root {
+    /* Light mode variables */
+    --primary-color: #5667FF;
+    --primary-hover: #4352db;
+    --secondary-color: #14c2a3;
+    --background-color: #f9fafc;
+    --card-color: #ffffff;
+    --text-color: #333;
+    --text-light: #666;
+    --border-color: #e5e8ef;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --box-shadow: 0 10px 30px rgba(86, 103, 255, 0.1);
+    --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+}
+
+/* Dark mode color scheme */
+[data-theme="dark"] {
+    --primary-color: #6778ff;
+    --primary-hover: #7889ff;
+    --secondary-color: #1ad8b7;
+    --background-color: #1a1e2b;
+    --card-color: #272b3a;
+    --text-color: #e8e8e8;
+    --text-light: #b0b0b0;
+    --border-color: #3a3f50;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Theme transition */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Theme toggle switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.theme-switch-track {
+    display: inline-block;
+    background-color: var(--border-color);
+    width: 48px;
+    height: 24px;
+    position: relative;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+.theme-switch-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card-color);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    color: var(--text-light);
+    font-size: 10px;
+}
+
+input[type="checkbox"].theme-switch-checkbox {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+input[type="checkbox"]:checked + .theme-switch-track {
+    background-color: var(--primary-color);
+}
+
+input[type="checkbox"]:checked + .theme-switch-track .theme-switch-thumb {
+    left: 26px;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--card-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.logo i {
+    margin-right: 0.75rem;
+}
+
+/* Main Content Styles */
+.main {
+    flex: 1;
+    padding: 3rem 1rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Subscription Card Styles */
+.subscription-card {
+    background-color: var(--card-color);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .subscription-card {
+        flex-direction: row;
+    }
+}
+
+.card-image {
+    flex: 1;
+    min-height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* Typography */
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+/* Form Styles */
+.subscription-form {
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.input-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon-wrapper i {
+    position: absolute;
+    left: 12px;
+    color: #aaa;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: var(--card-color);
+    color: var(--text-color);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(86, 103, 255, 0.15);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: var(--primary-color);
+    width: 16px;
+    height: 16px;
+}
+
+.checkbox label {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.subscribe-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.subscribe-button span {
+    margin-right: 0.5rem;
+}
+
+.subscribe-button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Privacy Note */
+.privacy-note {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.privacy-note i {
+    margin-right: 0.5rem;
+    color: var(--secondary-color);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--card-color);
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Message Styles */
+.message-container {
+    margin-top: 1.5rem;
+}
+
+.message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    animation: fadeIn 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.message::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 0.75rem;
+    font-size: 1rem;
+}
+
+.message.success {
+    background-color: rgba(40, 167, 69, 0.1);
+    border: 1px solid rgba(40, 167, 69, 0.2);
+    color: var(--success-color);
+}
+
+.message.success::before {
+    content: "\f058"; /* check-circle */
+}
+
+.message.error {
+    background-color: rgba(220, 53, 69, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.2);
+    color: var(--error-color);
+}
+
+.message.error::before {
+    content: "\f057"; /* times-circle */
+}
+
+.message.info {
+    background-color: rgba(23, 162, 184, 0.1);
+    border: 1px solid rgba(23, 162, 184, 0.2);
+    color: var(--info-color);
+}
+
+.message.info::before {
+    content: "\f05a"; /* info-circle */
+}
+
+.message.warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.2);
+    color: var(--warning-color);
+}
+
+.message.warning::before {
+    content: "\f071"; /* exclamation-triangle */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message.fade-out {
+    animation: fadeOut 0.5s;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Thank You Animation Styles */
+.thank-you-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 50px;
+    box-shadow: 0 15px 40px rgba(86, 103, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    z-index: 1000;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.thank-you-animation i {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+.thank-you-animation.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes popIn {
+    0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Newsletter Admin Dashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-section="subscribers">Subscribers</a></li>
+                    <li><a href="#" class="nav-link" data-section="templates">Templates</a></li>
+                    <li><a href="#" class="nav-link" data-section="scheduled">Scheduled Newsletters</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <!-- Subscribers Section -->
+            <section id="subscribers" class="section active">
+                <h2>Manage Subscribers</h2>
+                
+                <div class="card">
+                    <h3>Subscriber Groups</h3>
+                    <div id="groups-container">
+                        <div class="groups-list">
+                            <ul id="groups-list"></ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>All Subscribers</h3>
+                    <div class="search-bar">
+                        <input type="text" id="subscriber-search" placeholder="Search by email...">
+                        <select id="group-filter">
+                            <option value="">All Groups</option>
+                        </select>
+                    </div>
+                    <table id="subscribers-table">
+                        <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>Name</th>
+                                <th>Groups</th>
+                                <th>Subscribed Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="subscribers-list">
+                            <!-- Subscribers will be loaded here -->
+                        </tbody>
+                    </table>
+                    <div class="pagination" id="subscribers-pagination">
+                        <!-- Pagination controls will be here -->
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Templates Section -->
+            <section id="templates" class="section">
+                <h2>Newsletter Templates</h2>
+                
+                <div class="card">
+                    <h3>Create Template</h3>
+                    <form id="template-form">
+                        <div class="form-group">
+                            <label for="template-name">Template Name:</label>
+                            <input type="text" id="template-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="template-subject">Email Subject:</label>
+                            <input type="text" id="template-subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="template-content">Content:</label>
+                            <textarea id="template-content" rows="10" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" id="save-template-btn">Save Template</button>
+                            <button type="button" id="cancel-template-btn" style="display: none;">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="card">
+                    <h3>Saved Templates</h3>
+                    <div id="templates-list" class="templates-grid">
+                        <!-- Templates will be loaded here -->
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Scheduled Newsletters Section -->
+            <section id="scheduled" class="section">
+                <h2>Scheduled Newsletters</h2>
+                
+                <div class="card">
+                    <h3>Schedule New Newsletter</h3>
+                    <form id="schedule-form">
+                        <div class="form-group">
+                            <label for="newsletter-name">Newsletter Name:</label>
+                            <input type="text" id="newsletter-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsletter-subject">Email Subject:</label>
+                            <input type="text" id="newsletter-subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsletter-template">Template:</label>
+                            <select id="newsletter-template">
+                                <option value="">-- Create from scratch --</option>
+                                <!-- Templates will be loaded here -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsletter-content">Content:</label>
+                            <textarea id="newsletter-content" rows="10" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsletter-date">Send Date:</label>
+                            <input type="datetime-local" id="newsletter-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsletter-groups">Target Groups:</label>
+                            <div class="checkbox-group" id="newsletter-groups-checkboxes">
+                                <!-- Groups will be loaded here -->
+                            </div>
+                        </div>
+                        <button type="submit" id="schedule-newsletter-btn">Schedule Newsletter</button>
+                    </form>
+                </div>
+                
+                <div class="card">
+                    <h3>Scheduled Newsletters</h3>
+                    <table id="scheduled-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Subject</th>
+                                <th>Scheduled Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scheduled-list">
+                            <!-- Scheduled newsletters will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
