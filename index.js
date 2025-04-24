@@ -13,6 +13,9 @@ require("dotenv").config();
 // Connect to database
 connectDB();
 
+// Enable trust proxy to work with Vercel's proxy servers
+app.set('trust proxy', 1);
+
 app.use(
   cors({
     origin: "*",
